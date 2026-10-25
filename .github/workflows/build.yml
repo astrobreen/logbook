@@ -1,0 +1,32 @@
+name: Build check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Build standalone app
+        run: python scripts/build.py
+      - name: Check JavaScript syntax
+        run: |
+          python - <<'PY'
+          import re, pathlib
+          for f in ["src/app.html", "docs/index.html"]:
+              s = pathlib.Path(f).read_text(encoding="utf-8")
+              js = "\n".join(re.findall(r"<script>(.*?)</script>", s, re.S))
+              pathlib.Path(f.replace("/", "_") + ".js").write_text(js, encoding="utf-8")
+          PY
+          node --check src_app.html.js
+          node --check docs_index.html.js
+      - name: Check docs/ is up to date
+        run: git diff --exit-code docs/ || (echo "Run python scripts/build.py and commit docs/" && exit 1)

@@ -1,0 +1,12 @@
+# Never commit school data or backups
+*-data.json
+*-data-all.zip
+logbook-backup-*.json
+School-setup.json
+backups/
+
+# Build scratch
+*.html.js
+__pycache__/
+.DS_Store
+Thumbs.db
