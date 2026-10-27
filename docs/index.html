@@ -105,7 +105,7 @@ const E=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;
 const uid=()=>Math.random().toString(36).slice(2,10),td=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
 const opt=(a,sel,ph)=>(ph!=null?`<option value="">${E(ph)}</option>`:'')+a.map(([v,t])=>`<option value="${E(v)}"${v===sel?' selected':''}>${E(t)}</option>`).join('');
 const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null,f1=x=>x==null?'–':x.toFixed(1),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
-const TABS=['Lessons','Homework','Assessments','Reflection','Students','Overview','Setup'],UNITS=[...'123456'].map(n=>'Unit '+n).concat('Mini unit'),LESSONS=Array.from({length:40},(_,i)=>'Lesson '+(i+1));
+const TABS=['Lessons','Homework','Assessments','Reflection','Students','Overview','Setup'],UNITS=[...'123456'].map(n=>'Unit '+n).concat('Mini unit'),LESSONS=Array.from({length:20},(_,i)=>'Lesson '+(i+1));
 const DIM={B:'Behaviour',P:'Participation',N:'Notebook',R:'Reflection'},HWT=['Unit project','Worksheet','Revision','Other'];
 const DEF={cats:[['Discipline','p','B'],['Posture','p','B'],['Pre-study','p','R'],['Listener','p','P'],['Raise hand','p','P'],['Performance','p','P'],['Writing','p','N'],['Cooperation','p','B'],['Interruption','n','B'],['Distracted','n','P'],['Break rules','n','B'],['Stationery','n','N'],['Line up','n','B'],['Equipment','n','N'],['Neat work','p','N',1],['Careful','p','N',1],['Revised','p','R',1],['Sloppy work','n','N',1],['Delayed','n','N',1],['No revision','n','R',1]].map(([n,t,d,h])=>({n,t,d,h:h||0})),
 tc:['Preparation','Clarity of instruction','Engagement','Pacing','Behaviour management','Checking understanding'],cal:{base:80,step:2,A:90,B:80,C:70,D:60,w:60},sem:'2026 Semester 1'};
