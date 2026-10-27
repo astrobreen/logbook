@@ -18,7 +18,7 @@ On iPhone, use Safari and install to the Home Screen, otherwise iOS may clear st
 ## Features
 
 - **Lessons** — opens the class you are teaching now from your timetable; tap a category, then tap students to give points (students who already have that category are outlined with a count badge); tap a student with no category selected (or right-click / long-press) to see and adjust all their categories for the lesson; mark absences; homework switch; objective met; self-assessment; "what to improve next lesson" with *Did it / Not yet / Doesn't apply* follow-up; homework follow-up list for students who missed homework 2+ times in a row; one lesson per class per day (a second lesson needs confirming).
-- **Assignments** — unit projects, worksheets and revision for one or more classes; due dates; unit projects graded 1–5 (added to Reflection), −5 for no submission once checked.
+- **Assignments** — unit projects, worksheets and revision for one or more classes; due dates; unit projects graded out of 5 (1–5) or out of 10 (0–10, counted at half weight) and added to Reflection, −5 for no submission once checked.
 - **Assessments** — Behaviour, Participation, Notebook and Reflection scores calculated from points (editable), midterm/final, letter grades, generated feedback, printable reports and spreadsheet export.
 - **Reflection** — self-rating trend, average ratings, class climate, recent improvement notes, plans followed, Teaching Coach.
 - **Students** — individual profile, whole-class table and charts, class comparison; every table sorts by clicking a column header.
